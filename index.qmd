@@ -1,0 +1,46 @@
+# Abstract {.unnumbered}
+
+*The abstract is the second most-read part of the thesis (after the title page). It must work for a wider audience than the thesis itself, who are typically most interested in the results. Write it so it can be read independently from the rest of the report.*
+
+A well-structured abstract answers four questions in order:
+
+1. **Purpose and scope.** What is the main message of the thesis, and how far does the investigation reach?
+2. **Methods.** What was done to obtain the results (for example, analysed 3 articles, ran 5 experiments, interviewed 10 respondents)?
+3. **Results.** What answer was found to the research question? What did the study find?
+4. **Conclusion.** What are the larger implications of the findings, especially for the purpose stated in step 1?
+
+Aim for 300 to 500 words. Emphasise the most important elements, use short sentences with varied structure, and keep the vocabulary as plain as possible. Explain or avoid terms and abbreviations that a wider audience will not recognise. Write the abstract last, once the rest of the thesis has stabilised.
+
+**Keywords:** between three and ten keywords that represent the scope of the work.
+
+<!--
+OPTIONAL: Swedish abstract (Sammanfattning).
+
+Not required at master level for theses written in English. Required for
+theses written in Swedish. Uncomment the block below and translate the
+English abstract to keep it in sync.
+
+# Sammanfattning {.unnumbered}
+
+*Samma innehåll som Abstract men på svenska. Innehåller syfte och omfattning,
+metod, resultat och slutsats. Skriv den sist, när det engelska abstraktet är
+klart.*
+
+**Nyckelord:** mellan tre och tio nyckelord.
+-->
+
+<!--
+WRITING NOTES (delete before submission)
+
+- Avoid em dashes ( — ) and double dashes ( -- ) as appositive separators.
+  Use commas, semicolons, colons, or periods instead.
+- Avoid AI-style filler: "delve into", "it is worth noting",
+  "state-of-the-art", "leverage", "robust", "in order to" (use "to"),
+  "this indicates that", "furthermore, it is important to".
+- Do not use `\cdot` between variables. Write $B_p = \alpha r B_v / g$,
+  not $\alpha \cdot r \cdot B_v / g$. Keep `\cdot` only between numbers
+  ($5 \cdot 3 = 15$) and in vector dot products.
+- Use math notation in the body, not code identifiers. Write
+  $P_\text{stab}$, not `stab_p`.
+- Pick British or American spelling and stay consistent.
+-->

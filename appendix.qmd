@@ -1,0 +1,15 @@
+# Appendix {.unnumbered}
+
+*Use appendices for material that is too detailed for the main chapters but that a careful reader will want to verify: full procedures, mesh-independence studies, parameter sweeps, raw data tables, source code beyond a representative listing. Number every appendix.*
+
+## A. Mesh independence study {#sec-appendix-mesh}
+
+Describe the meshes evaluated, the convergence metric and the chosen mesh. A table of element count against the response variable, plus a short paragraph identifying the point at which further refinement no longer changes the answer, is sufficient.
+
+## B. Bill of materials
+
+List every part with manufacturer, part number, quantity and unit cost.
+
+## C. Test protocol
+
+Step-by-step instructions for repeating the experimental procedure described in @sec-methodology.

@@ -1,0 +1,106 @@
+$if(has-frontmatter)$
+\frontmatter
+$endif$
+
+% ------------------------------------------------------------------
+% Title page. Pandoc substitutes the $variable$ values from the YAML
+% in _quarto.yml. Edit metadata in _quarto.yml, not here.
+% ------------------------------------------------------------------
+\begin{titlepage}
+\begin{flushleft}
+\includegraphics[width=0.25\paperwidth]{images/schoolLogo}
+\end{flushleft}
+
+\vspace*{0.1\textheight}
+
+\begin{center}
+\textsf{$if(thesis-type)$$thesis-type$$else$Master Thesis$endif$}
+\end{center}
+
+\vspace{0.03\textheight}
+
+\begin{spacing}{1.4}
+\begin{center}
+\textsf{\textbf{\huge $title$}}
+\end{center}
+\end{spacing}
+
+$if(subtitle)$
+\vspace{0.03\textheight}
+\begin{center}
+\textsf{\Large $subtitle$}
+\end{center}
+$endif$
+
+\vspace{0.02\textheight}
+
+\begin{center}
+PAPER WITHIN \textit{$if(programme)$$programme$$else$Industrial Product Realisation$endif$}
+\end{center}
+
+\vspace{0.02\textheight}
+
+\begin{center}
+AUTHOR: \textit{$for(author)$$author$$sep$ \& $endfor$}
+\end{center}
+
+\vfill
+
+\begin{flushleft}
+\textsf{$if(university)$$university$$else$Jönköping University$endif$}\\
+\textsf{$if(school)$$school$$else$School of Engineering$endif$}\\
+\textsf{$if(department)$$department$$else$Department of Product Development$endif$ \textbullet{} $date$}
+\end{flushleft}
+
+\end{titlepage}
+
+\clearpage
+\thispagestyle{empty}
+
+\null
+\vfill
+
+\noindent This final project work has been carried out at the $if(school)$$school$$else$School of Engineering$endif$,
+$if(university)$$university$$else$Jönköping University$endif$, in the subject area
+$if(programme)$$programme$$else$Industrial Product Realisation$endif$.
+The authors take full responsibility for opinions, conclusions and findings presented.
+
+\noindent
+\begin{minipage}[t]{0.2\columnwidth}
+Examiner:\\
+Supervisor:\\
+Scope:\\
+Date:
+\end{minipage}%
+\begin{minipage}[t]{0.75\columnwidth}
+$if(examiner)$$examiner$$else$Name of the examiner$endif$\\
+$if(supervisor)$$supervisor$$else$Name of the supervisor$endif$\\
+$if(scope)$$scope$$else$30 credits (second cycle)$endif$\\
+$if(date-signed)$$date-signed$$else$2026-05-XX$endif$
+\end{minipage}
+
+\clearpage
+
+\clearpairofpagestyles
+\cfoot[\pagemark]{\pagemark}
+\chead{\leftmark}
+\KOMAoptions{headsepline=true}
+
+\pagenumbering{roman}
+{
+\setcounter{tocdepth}{3}
+\tableofcontents
+}
+
+$if(lof)$
+\clearpage
+\listoffigures
+$endif$
+
+$if(lot)$
+\clearpage
+\listoftables
+$endif$
+
+\clearpage
+\pagenumbering{arabic}

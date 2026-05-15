@@ -1,0 +1,10 @@
+_output/
+.quarto/
+.claude/
+*.pdf
+.ipynb_checkpoints/
+__pycache__/
+
+/.quarto/
+
+**/*.quarto_ipynb

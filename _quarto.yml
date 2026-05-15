@@ -1,0 +1,77 @@
+project:
+  type: book
+  output-dir: _output
+
+book:
+  title: "Title of the Thesis"
+  subtitle: "Optional Subtitle"
+  author:
+    - "First Author"
+    - "Second Author"
+  date: 2026-05-15
+  date-format: "MMMM YYYY"
+  chapters:
+    - index.qmd
+    - preface.qmd
+    - abbreviations.qmd
+    - introduction.ipynb
+    - theory.ipynb
+    - methodology.ipynb
+    - results.ipynb
+    - analysis.ipynb
+    - discussion.ipynb
+    - conclusions.ipynb
+    - references.qmd
+  appendices:
+    - appendix.qmd
+
+# Custom metadata propagated to titlepage.tex.
+thesis-type: "Master Thesis"
+programme: "Industrial Product Realisation"
+university: "Jönköping University"
+school: "School of Engineering"
+department: "Department of Product Development"
+examiner: "Name of the examiner"
+supervisor: "Name of the supervisor"
+scope: "30 credits (second cycle)"
+date-signed: "2026-05-XX"
+
+format:
+  pdf:
+    documentclass: scrreprt
+    classoption:
+      - 11pt
+      - twoside
+    papersize: a4
+    geometry:
+      - top=30mm
+      - bottom=30mm
+      - inner=20mm
+      - outer=20mm
+    linestretch: 1.3
+    number-sections: true
+    toc: false
+    # The custom title page in before-body.tex emits its own TOC,
+    # so Pandoc's automatic one is suppressed here.
+    toc-depth: 3
+    lof: true
+    lot: true
+    colorlinks: true
+    link-citations: true
+    link-bibliography: true
+    linkcolor: NavyBlue
+    citecolor: NavyBlue
+    urlcolor: NavyBlue
+    include-in-header: preamble.tex
+    template-partials:
+      - before-body.tex
+      - title.tex
+    fig-pos: "H"
+    top-level-division: chapter
+
+bibliography: references.bib
+csl: apa.csl
+
+execute:
+  eval: false
+  echo: true

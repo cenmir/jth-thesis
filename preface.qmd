@@ -1,0 +1,12 @@
+# Preface {.unnumbered}
+
+*State where and when the thesis work was performed, and which educational programme it concludes. Then acknowledge supervisors, people who helped along the way, family and friends.*
+
+This thesis was carried out at the School of Engineering, Jönköping University, as the final project of the *Programme name* programme, between *start month* and *end month*, year.
+
+We would like to thank our supervisor *Name* for guidance throughout the project, our examiner *Name* for valuable feedback, and *Company or department* for providing access to the equipment and data that made the work possible. Finally, we thank our families and friends for their support.
+
+Jönköping, *Month Year*
+
+*Author One*
+*Author Two*

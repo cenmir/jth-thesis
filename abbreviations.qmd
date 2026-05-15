@@ -1,0 +1,82 @@
+# List of Abbreviations {.unnumbered}
+
+*List every abbreviation that appears more than once in the body. Define abbreviations that appear only once inline at first use instead. Keep the list alphabetical.*
+
+<!--
+Use a Markdown definition list: the term on one line, a blank line,
+then an indented colon-definition. Quarto renders this as a clean
+two-column layout in the PDF.
+-->
+
+BLDC
+:   Brushless Direct Current (motor)
+
+DE
+:   Differential Evolution
+
+FEA
+:   Finite Element Analysis
+
+FOC
+:   Field-Oriented Control
+
+IMU
+:   Inertial Measurement Unit
+
+LQR
+:   Linear Quadratic Regulator
+
+MCU
+:   Microcontroller Unit
+
+PID
+:   Proportional-Integral-Derivative
+
+RQ
+:   Research Question
+
+# Nomenclature {.unnumbered}
+
+*Optional but recommended once the thesis uses more than a handful of mathematical symbols. List every symbol used in equations, with units in parentheses. Group by Latin then Greek, or keep one alphabetical list.*
+
+$E$
+:   Young's modulus (Pa)
+
+$g$
+:   Gravitational acceleration (m/s²)
+
+$K_p, K_i, K_d$
+:   Proportional, integral, derivative gains of the PID controller
+
+$L$
+:   Distance from pivot to centre of mass (m)
+
+$M_p$
+:   Mass of the pendulum body (kg)
+
+$r$
+:   Wheel radius (m)
+
+$\bm{d}$
+:   Nodal displacement vector
+
+$\bm{F}$
+:   External nodal force vector
+
+$\bm{K}$
+:   Stiffness matrix
+
+$\alpha$
+:   Gravitational instability coefficient (rad²/s²)
+
+$\varepsilon$
+:   Engineering strain
+
+$\theta$
+:   Pitch angle measured from vertical (rad)
+
+$\sigma$
+:   Engineering stress (Pa)
+
+$\sigma_y$
+:   Yield strength (Pa)

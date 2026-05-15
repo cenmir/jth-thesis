@@ -1,0 +1,8 @@
+\usepackage{float}
+\usepackage[automark]{scrlayer-scrpage}
+\usepackage{amsmath}
+
+% Quarto's default LuaLaTeX engine loads unicode-math, which silently
+% breaks \bm{} from the bm package. Re-map \bm to unicode-math's \symbf
+% so existing \bm{d}, \bm{K}, etc. continue to work in equations.
+\AtBeginDocument{\providecommand{\bm}{\symbf}\let\bm\symbf}
