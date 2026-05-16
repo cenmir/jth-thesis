@@ -74,7 +74,8 @@ book:
   author:
     - "First Author"
     - "Second Author"
-  date: "May 2026"
+  date: 2026-05-15           # ISO date; date-format below controls display
+  date-format: "MMMM YYYY"
 
 thesis-type: "Master Thesis"
 programme: "Industrial Product Realisation"
@@ -84,8 +85,8 @@ scope: "30 credits (second cycle)"
 date-signed: "2026-05-XX"
 ```
 
-`titlepage.tex` consumes those values, so you do not edit LaTeX by hand for
-the title page.
+`before-body.tex` consumes those values via Pandoc template substitution,
+so you do not edit LaTeX by hand for the title page.
 
 ## Working on jupyter.ju.se
 
@@ -170,30 +171,27 @@ without executing it, which is the safer default for a thesis. Switch to
 ## License
 
 The template itself (Quarto sources, LaTeX partials, build scripts,
-prose guidance) is released under the [MIT License](LICENSE). Students
-and other supervisors are free to fork, adapt and redistribute it for
-any thesis project, commercial or not, with or without modification.
-Attribution back to the original repository is appreciated but not
-required by the licence.
+prose guidance) is released under the
+[Creative Commons Attribution 4.0 International License](LICENSE)
+(CC BY 4.0). Students and other supervisors are free to fork, adapt
+and redistribute it for any thesis project, commercial or not, with
+or without modification. The only requirement is **attribution**: cite
+the author and link back to this repository in any derivative work.
+See `LICENSE` for the suggested citation format.
 
-Files that are *bundled with* the template but not licensed under MIT:
+Files that are *bundled with* the template but covered by other terms:
 
 - `ieee.csl` and `apa-7th.csl` come from <https://www.zotero.org/styles>
-  and are distributed under their own licence (CC BY-SA, as set by the
-  Citation Style Language project). They are unchanged from the upstream
-  versions.
+  and remain under the upstream Citation Style Language project's
+  licence (CC BY-SA). They are unchanged from the upstream versions.
 - `images/schoolLogo.*` are the Jönköping University School of
   Engineering logos and belong to JU. They are included for student use
   of this template within JU; external forks should replace them with
   their own institution's branding.
-- `images/chad.jpg` is a meme image kept from the legacy LyX template as
-  a demonstration of figure syntax. Replace it with a real figure before
-  submission.
+- `images/chad.jpg` is a placeholder figure used only to demonstrate
+  Quarto's image-embedding syntax. Replace it with a real figure
+  before submission.
 
-The MIT licence applies to *the template*, not to your *thesis*. The
-thesis you write using this template is your work; you decide its
-licence and copyright independently of this repository.
-
-## License
-
-Pick a license, put it here.
+CC BY 4.0 covers *the template*, not the thesis you produce with it.
+Your thesis text is your work; you decide its licence and copyright
+independently of this repository.
