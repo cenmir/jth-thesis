@@ -1,82 +1,83 @@
+# Quarto project configuration. Every key below is consumed either by
+# Quarto itself, by Pandoc, or by the custom LaTeX partials in this repo.
+
 project:
-  type: book
-  output-dir: _output
+  type: book                  # 'book' enables auto-numbered chapters and a single PDF
+  output-dir: _output         # rendered PDF and intermediate files go here
 
 book:
-  title: "JTH Thesis Template"
-  subtitle: "A quarto template for the modern age of thesis writing"
-  author:
+  title: "JTH Thesis Template"                                    # printed on the title page (via before-body.tex)
+  subtitle: "A quarto template for the modern age of thesis writing"  # optional subtitle, also on the title page
+  author:                                                         # list of authors, rendered as 'A & B' on the title page
     - "First Author"
     - "Second Author"
-  date: 2026-05-15
-  date-format: "MMMM YYYY"
-  chapters:
-    - index.qmd        # Quarto book requires this filename; holds the Abstract
-    - preface.qmd
-    - abbreviations.qmd
-    - introduction.ipynb
-    - theory.ipynb
-    - methodology.ipynb
-    - results.ipynb
-    - analysis.ipynb
-    - discussion.ipynb
-    - conclusions.ipynb
-    - references.qmd
-  appendices:
+  date: 2026-05-15            # ISO date so Quarto can format it; appears on the title page
+  date-format: "MMMM YYYY"    # rendered as 'May 2026' rather than '2026-05-15'
+  chapters:                   # ordered list of chapter files; numbering follows this order
+    - index.qmd               # Quarto book requires this filename; holds the Abstract
+    - preface.qmd             # Preface and acknowledgements (unnumbered)
+    - abbreviations.qmd       # List of Abbreviations + Nomenclature (unnumbered)
+    - introduction.ipynb      # Chapter 1
+    - theory.ipynb            # Chapter 2
+    - methodology.ipynb       # Chapter 3
+    - results.ipynb           # Chapter 4
+    - analysis.ipynb          # Chapter 5
+    - discussion.ipynb        # Chapter 6
+    - conclusions.ipynb       # Chapter 7
+    - references.qmd          # References (unnumbered; pulls from references.bib)
+  appendices:                 # appendices come after References under an auto 'Appendices' heading
     - appendix.qmd
 
-# Custom metadata propagated to titlepage.tex.
-thesis-type: "Master Thesis"
-programme: "Industrial Product Realisation"
-university: "Jönköping University"
-school: "School of Engineering"
-department: "Department of Product Development, Production and Design"
-examiner: "Name of the examiner"
-supervisor: "Name of the supervisor"
-scope: "30 credits (second cycle)"
-date-signed: "2026-05-XX"
+# Custom metadata consumed by before-body.tex when it builds the title page.
+# Edit these once per project; you do not need to touch LaTeX for routine
+# title-page changes.
+thesis-type: "Master Thesis"                                       # printed below the school logo
+programme: "Industrial Product Realisation"                        # 'PAPER WITHIN ...' line on the title page
+university: "Jönköping University"                                 # institution name at the foot of the title page
+school: "School of Engineering"                                    # school name at the foot of the title page
+department: "Department of Product Development, Production and Design"  # department name at the foot of the title page
+examiner: "Name of the examiner"                                   # examiner field on the signing page
+supervisor: "Name of the supervisor"                               # supervisor field on the signing page
+scope: "30 credits (second cycle)"                                 # ECTS credits and level
+date-signed: "2026-05-XX"                                          # date the thesis is signed off; fill before submission
 
 format:
-  pdf:
-    documentclass: scrreprt
-    classoption:
-      - 11pt
-      - twoside
-    papersize: a4
-    geometry:
-      - top=30mm
-      - bottom=30mm
-      - inner=20mm
-      - outer=20mm
-    linestretch: 1.3
-    number-sections: true
-    toc: false
-    # The custom title page in before-body.tex emits its own TOC,
-    # so Pandoc's automatic one is suppressed here.
-    toc-depth: 3
-    # \listoffigures and \listoftables are emitted manually in
-    # before-body.tex so they sit on roman-numbered front-matter pages,
-    # alongside the TOC. Leave lof/lot off here to avoid duplicates.
-    lof: false
-    lot: false
-    colorlinks: true
-    link-citations: true
-    link-bibliography: true
-    linkcolor: NavyBlue
-    citecolor: NavyBlue
-    urlcolor: NavyBlue
-    include-in-header: preamble.tex
-    template-partials:
-      - before-body.tex
-      - title.tex
-    fig-pos: "H"
-    top-level-division: chapter
+  pdf:                                                # render target; 'quarto render' produces a PDF
+    documentclass: scrreprt                           # KOMA-Script report class; needed for \chapter and twoside
+    classoption:                                      # options passed to the document class
+      - 11pt                                          # body font size
+      - twoside                                       # different margins / headers for recto and verso pages
+    papersize: a4                                     # A4 paper, not US letter
+    geometry:                                         # page margins set via the geometry package
+      - top=30mm                                      # top margin
+      - bottom=30mm                                   # bottom margin
+      - inner=20mm                                    # spine-side margin (binding edge)
+      - outer=20mm                                    # outer margin
+    linestretch: 1.3                                  # 1.3-line spacing in body text
+    number-sections: true                             # auto-number headings (1, 1.1, 1.1.1, ...)
+    toc: false                                        # Pandoc's auto-TOC is OFF; before-body.tex emits the TOC manually
+    toc-depth: 3                                      # how deep TOC entries go (3 = section.subsection.subsubsection)
+    lof: false                                        # Pandoc's auto-List-of-Figures is OFF; emitted in before-body.tex
+    lot: false                                        # Pandoc's auto-List-of-Tables is OFF; emitted in before-body.tex
+    colorlinks: true                                  # hyperlinks render as coloured text, not boxed
+    link-citations: true                              # in-text [N] citations link to the bibliography entry
+    link-bibliography: true                           # bibliography entries link to the source URL or DOI
+    linkcolor: NavyBlue                               # colour for internal links (TOC, cross-refs)
+    citecolor: NavyBlue                               # colour for citation links
+    urlcolor: NavyBlue                                # colour for external URL links
+    include-in-header: preamble.tex                   # extra LaTeX packages and macro definitions
+    template-partials:                                # override Pandoc default partials with our own
+      - before-body.tex                               # title page + TOC + LoF + LoT (all front matter)
+      - title.tex                                     # empty: suppresses Pandoc's default \maketitle block
+    fig-pos: "H"                                      # default figure float specifier (H = 'here, no fallback')
+    top-level-division: chapter                       # treat '# Heading' as a chapter, not a part
 
-bibliography: references.bib
-# Default style: IEEE numeric ([1], [2], ...). Math- and engineering-heavy
-# theses usually prefer IEEE. For author-date style, switch to apa-7th.csl.
-csl: ieee.csl
+bibliography: references.bib  # BibTeX entries used by every @cite-key in the body
+# Citation style. Math- and engineering-heavy theses usually prefer IEEE.
+# Comment one out and uncomment the other to switch.
+csl: ieee.csl       # numeric, IEEE Reference Guide (default)
+# csl: apa-7th.csl  # author-date, APA 7th edition
 
-execute:
-  eval: false
-  echo: true
+execute:        # project-wide defaults for executable code cells
+  eval: false   # do NOT run cells on render; override per-cell with '#| eval: true' once a cell is final
+  echo: true    # always show the source listing in the rendered PDF
