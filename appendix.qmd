@@ -13,3 +13,37 @@ List every part with manufacturer, part number, quantity and unit cost.
 ## C. Test protocol
 
 Step-by-step instructions for repeating the experimental procedure described in @sec-methodology.
+
+## D. Benchmark theses (grade 5 calibration) {#sec-benchmarks}
+
+*Examples of past Master theses from these programmes that scored grade 5. Read them when in doubt about the engineering bar. The four works below are independent pieces of work, but they share the patterns that distinguish a grade-5 thesis from a grade-3 one: a complete workflow rather than an isolated activity, quantitative results with units, multi-method validation, and an honest, self-critical discussion. Each is open-access via the DiVA repository.*
+
+### D.1 Bazzi & Angelou (2018) — Anisotropic polymer simulation
+
+*Simulation of Anisotropic Material Properties in Polymers.* Conducted with Thule Group and Dynamore Nordic AB. Concise (about 60 pages). Three nested research questions: how does the thermoforming process affect material properties, can the experimental behaviour be captured in simulation, and can simulation results from thermoforming feed into structural analysis. The chain runs end to end: tensile testing of ABS specimens at five temperatures (with five samples per temperature), vacuum thermoforming on a Formech 1372, LS-DYNA thermoforming simulation using an Ogden hyperelastic fit, mapping into a structural mesh via BETA ANSA, and structural FEA with the Barlat anisotropic plasticity model. Validation: simulated thickness versus measured thickness at fifty points after thermoforming. The discussion is honest about equipment limits (the 100 kN load cell was too coarse for the softer specimens at 160 °C; the oven was undersized). DiVA: <http://www.diva-portal.org/smash/record.jsf?pid=diva2:1223703>.
+
+### D.2 Svensson (2021) — Topology optimisation and additive manufacturing
+
+*Selection of a Product Component for Topology Optimization and Additive Manufacturing.* Conducted with Husqvarna. About 113 pages. Three research questions: how to systematically select a component for TO and AM, to what extent topology optimisation can improve it, and whether the optimised design is manufacturable. Methodology combines semi-structured interviews with Husqvarna engineers, a Pugh decision matrix for the component selection, topology optimisation in Altair Inspire (SIMP), FEA validation with static, modal, and frequency-response analyses (over twenty natural frequencies analysed), and a physically printed prototype at AMEXCI (SLS) that was mounted in a real chainsaw. Quantitative result: 30.8 % weight reduction at 57 % stress utilisation, with a 14.8 % increase in fin area. DiVA: <http://hj.diva-portal.org/smash/record.jsf?pid=diva2:1561200>.
+
+### D.3 Frank & Qasemi (2020) — Battery-pack thermal management
+
+*Thermal Management of Lithium-Ion Battery Pack.* Conducted with Globe Group / Greenworks during COVID-related constraints. Investigates the Cramer 82V battery pack during high-current discharge. Combines physical testing (seven batteries, two discharge rates at 35 A and 45 A, thermal sensors at six positions per battery, supplemented by thermal-camera imaging) with SolidWorks thermal simulation. The simulation is calibrated against the experimental temperature curves at each sensor position, then used to propose geometry and airflow changes for the next-generation pack. The discussion is open about COVID-related budget limits and sensor-mounting uncertainty on cylindrical cells. Tangible deliverable: a calibrated model that the company can reuse. DiVA: <http://www.diva-portal.org/smash/record.jsf?pid=diva2:1520751>.
+
+### D.4 Ngo & Lohus (2024) — Constitutive foam modelling for child restraint systems
+
+*Finite Elements and Constitutive Material Modeling of Foams.* Conducted with Thule Group. About 95 pages, the most technically demanding of the four benchmarks. Compares three LS-DYNA material models (MAT_57, MAT_83, MAT_181) for strain-rate-dependent foam. The experimental campaign covers uniaxial compression, tensile, bending, and dynamic-impact drop tests at 1 m and 2 m. Parameter fitting via LS-OPT; Python scripts automate the generation of LS-DYNA material cards. Theory chapter includes nonlinear continuum mechanics, visco-hyperelasticity, Nagy's and Jeong's strain-rate formulations, and contact mechanics. The transferable deliverable is a documented 5-step routine for defining MAT_83 from quasi-static tests, plus the automation scripts. DiVA: <http://www.diva-portal.org/smash/record.jsf?pid=diva2:1885970>.
+
+### D.5 What these four have in common
+
+When you read them, watch for these patterns; they are what the manifesto in @sec-introduction asks for.
+
+- **A complete workflow** (experiment, simulation, validation, application) rather than a single isolated activity. The chain is the contribution.
+- **Quantitative results with units.** "30.8 % weight reduction at 57 % stress utilisation", "seven batteries at two discharge rates", "drop tests at 1 m and 2 m". Vague qualitative claims do not score 5.
+- **Multi-method validation.** Thermal-camera imaging on top of point sensors. Three material models compared against the same data. Multiple loading conditions. A second independent check is what makes the first check trustworthy.
+- **Self-critical discussion.** Equipment limits are named (load cell, oven size, sensor mounting). Model versus calibration limitations are distinguished. None of these works pretend their constraints did not exist.
+- **A reusable artefact for the partner.** A calibrated model, a printable prototype that mounts in a real product, a 5-step routine, a Python script. The thesis outlives the defence.
+- **Theory used in real depth.** Ogden, Barlat, SIMP, Fu Chang and Jeong are not dropped into the theory chapter as decoration; they are necessary to interpret the results.
+
+Read one or two of these end-to-end before writing your own theory chapter and you will see why "this could have been written by someone with a SolidWorks licence" is the wrong outcome for a thesis from these programmes.
+
