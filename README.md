@@ -102,7 +102,7 @@ to install locally.
 3. Paste this single line, press Enter:
 
    ```bash
-   mkdir -p ~/thesis && curl -fsSL https://github.com/cenmir/JTH-Thesis-Template-Quarto/archive/refs/heads/main.tar.gz | tar xz -C ~/thesis --strip-components=1 && cd ~/thesis && quarto render
+   mkdir -p ~/thesis && curl -fsSL https://github.com/cenmir/jth-thesis/archive/refs/heads/main.tar.gz | tar xz -C ~/thesis --strip-components=1 && cd ~/thesis && quarto render
    ```
 
 4. When the command finishes, the PDF is at `~/thesis/_output/JTH-Thesis-Template.pdf`.
@@ -114,8 +114,7 @@ What the one-liner does, in four steps:
 - `curl -fsSL .../main.tar.gz` downloads the latest tarball of this
   template's `main` branch from GitHub.
 - `tar xz -C ~/thesis --strip-components=1` extracts the contents
-  directly into `~/thesis` (no wrapping `JTH-Thesis-Template-Quarto-main/`
-  folder).
+  directly into `~/thesis` (no wrapping `jth-thesis-main/` folder).
 - `cd ~/thesis && quarto render` produces the first PDF so you know
   the toolchain works before you start editing.
 
@@ -131,7 +130,7 @@ then clone your fork instead:
 
 ```bash
 cd ~
-git clone https://github.com/<your-account>/JTH-Thesis-Template-Quarto.git thesis
+git clone https://github.com/<your-account>/jth-thesis.git thesis
 cd thesis
 quarto render
 ```
