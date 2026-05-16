@@ -12,7 +12,8 @@ has Python, Jupyter, Quarto and a TeX distribution preinstalled.
 
 ```
 _quarto.yml                  Book configuration (chapters, format, metadata)
-index.qmd                    Abstract (entry point of the book)
+index.qmd                    Abstract. Filename is fixed: Quarto book
+                             requires an `index.qmd` as the entry point.
 preface.qmd                  Preface and acknowledgements
 abbreviations.qmd            List of abbreviations + nomenclature
 introduction.ipynb           Chapter 1: Introduction

@@ -11,7 +11,7 @@ book:
   date: 2026-05-15
   date-format: "MMMM YYYY"
   chapters:
-    - index.qmd
+    - index.qmd        # Quarto book requires this filename; holds the Abstract
     - preface.qmd
     - abbreviations.qmd
     - introduction.ipynb
