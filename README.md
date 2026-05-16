@@ -169,4 +169,31 @@ without executing it, which is the safer default for a thesis. Switch to
 
 ## License
 
+The template itself (Quarto sources, LaTeX partials, build scripts,
+prose guidance) is released under the [MIT License](LICENSE). Students
+and other supervisors are free to fork, adapt and redistribute it for
+any thesis project, commercial or not, with or without modification.
+Attribution back to the original repository is appreciated but not
+required by the licence.
+
+Files that are *bundled with* the template but not licensed under MIT:
+
+- `ieee.csl` and `apa-7th.csl` come from <https://www.zotero.org/styles>
+  and are distributed under their own licence (CC BY-SA, as set by the
+  Citation Style Language project). They are unchanged from the upstream
+  versions.
+- `images/schoolLogo.*` are the Jönköping University School of
+  Engineering logos and belong to JU. They are included for student use
+  of this template within JU; external forks should replace them with
+  their own institution's branding.
+- `images/chad.jpg` is a meme image kept from the legacy LyX template as
+  a demonstration of figure syntax. Replace it with a real figure before
+  submission.
+
+The MIT licence applies to *the template*, not to your *thesis*. The
+thesis you write using this template is your work; you decide its
+licence and copyright independently of this repository.
+
+## License
+
 Pick a license, put it here.
