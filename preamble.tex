@@ -3,6 +3,17 @@
 \usepackage{amsmath}
 \usepackage{etoolbox}
 
+% Wrap long lines in fenced code blocks so listings never overflow the
+% right margin. fvextra is already loaded by Quarto for the Highlighting
+% environment; we re-define it with the breaklines option.
+\usepackage{fvextra}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{%
+  breaklines,
+  breakanywhere,
+  breakautoindent,
+  commandchars=\\\{\}%
+}
+
 % Quarto's default LuaLaTeX engine loads unicode-math, which silently
 % breaks \bm{} from the bm package. Re-map \bm to unicode-math's \symbf
 % so existing \bm{d}, \bm{K}, etc. continue to work in equations.
