@@ -98,13 +98,25 @@ to install locally.
 
 1. Log in to <https://jupyter.ju.se>.
 2. Open a terminal in Jupyter Lab (File → New → Terminal).
-3. Paste this single line, press Enter:
+3. Confirm the environment has the three tools the template needs.
+   Each command should print a version number, not "command not
+   found":
+
+   ```bash
+   quarto --version              # expect 1.4 or newer
+   python --version              # expect 3.10 or newer
+   lualatex --version | head -1  # expect LuaHBTeX (TeX Live or MiKTeX)
+   ```
+
+   If any of the three is missing, contact the JupyterHub admin before
+   continuing; the one-liner below will not work without all three.
+4. Paste this single line, press Enter:
 
    ```bash
    mkdir -p ~/thesis && curl -fsSL https://github.com/cenmir/JTH-Thesis-Template-Quarto/archive/refs/heads/main.tar.gz | tar xz -C ~/thesis --strip-components=1 && cd ~/thesis && quarto render
    ```
 
-4. When the command finishes, the PDF is at `~/thesis/_output/JTH-Thesis-Template.pdf`.
+5. When the command finishes, the PDF is at `~/thesis/_output/JTH-Thesis-Template.pdf`.
    Open it from the Jupyter Lab file browser to verify the build worked.
 
 What the one-liner does, in four steps:
