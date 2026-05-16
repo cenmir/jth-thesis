@@ -3,8 +3,8 @@ project:
   output-dir: _output
 
 book:
-  title: "Title of the Thesis"
-  subtitle: "Optional Subtitle"
+  title: "JTH Thesis Template"
+  subtitle: "A quarto template for the modern age of thesis writing"
   author:
     - "First Author"
     - "Second Author"
@@ -30,7 +30,7 @@ thesis-type: "Master Thesis"
 programme: "Industrial Product Realisation"
 university: "Jönköping University"
 school: "School of Engineering"
-department: "Department of Product Development"
+department: "Department of Product Development, Production and Design"
 examiner: "Name of the examiner"
 supervisor: "Name of the supervisor"
 scope: "30 credits (second cycle)"
@@ -70,7 +70,9 @@ format:
     top-level-division: chapter
 
 bibliography: references.bib
-csl: apa.csl
+# Default style: IEEE numeric ([1], [2], ...). Math- and engineering-heavy
+# theses usually prefer IEEE. For author-date style, switch to apa-7th.csl.
+csl: ieee.csl
 
 execute:
   eval: false

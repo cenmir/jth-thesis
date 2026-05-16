@@ -25,11 +25,11 @@ conclusions.ipynb            Chapter 7: Conclusions
 references.qmd               References (auto-populated from references.bib)
 appendix.qmd                 Appendices
 references.bib               BibTeX bibliography
-apa.csl                      Citation style (APA)
-titlepage.tex                Custom title page (reads metadata from _quarto.yml)
-before-body.tex              Front-matter / TOC LaTeX partial
-title.tex                    Empty Pandoc partial (titlepage handled elsewhere)
-preamble.tex                 LaTeX packages (amsmath, bm, scrlayer-scrpage, float)
+ieee.csl                     Citation style: IEEE numeric (default)
+apa-7th.csl                  Citation style: APA 7th edition (alternative)
+before-body.tex              Title page + front-matter LaTeX partial
+title.tex                    Empty Pandoc partial (title page lives in before-body.tex)
+preamble.tex                 LaTeX packages and the \bm to \symbf alias for unicode-math
 images/                      Figures
 CHECKLIST.md                 Pre-submission checklist
 ```
@@ -97,6 +97,15 @@ without executing it, which is the safer default for a thesis. Switch to
   rendered into the book).
 - **References** are managed in `references.bib`. Cite with `@key` or
   `[@key]` and Quarto handles the rest.
+- **Citation style** defaults to IEEE numeric (`ieee.csl`). To switch to
+  APA 7, change one line in `_quarto.yml`:
+  ```yaml
+  csl: ieee.csl       # numeric, IEEE Reference Guide (default)
+  # csl: apa-7th.csl  # author-date, APA 7th edition
+  ```
+  IEEE suits math- and engineering-heavy theses; APA 7 suits theses with
+  a strong empirical or qualitative component. Ultimately the authors'
+  choice, subject to the programme's submission guidelines.
 
 ## License
 
