@@ -54,8 +54,11 @@ format:
     # The custom title page in before-body.tex emits its own TOC,
     # so Pandoc's automatic one is suppressed here.
     toc-depth: 3
-    lof: true
-    lot: true
+    # \listoffigures and \listoftables are emitted manually in
+    # before-body.tex so they sit on roman-numbered front-matter pages,
+    # alongside the TOC. Leave lof/lot off here to avoid duplicates.
+    lof: false
+    lot: false
     colorlinks: true
     link-citations: true
     link-bibliography: true
