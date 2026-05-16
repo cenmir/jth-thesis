@@ -55,7 +55,7 @@ From the project root, run:
 quarto render
 ```
 
-Output appears in `_output/`. The rendered book is `_output/<title>.pdf`.
+Output appears in the project root. The rendered book is `<title>.pdf` next to `_quarto.yml`.
 
 To render a single chapter while drafting:
 
@@ -105,7 +105,7 @@ to install locally.
    mkdir -p ~/thesis && curl -fsSL https://github.com/cenmir/jth-thesis/archive/refs/heads/main.tar.gz | tar xz -C ~/thesis --strip-components=1 && cd ~/thesis && quarto render
    ```
 
-4. When the command finishes, the PDF is at `~/thesis/_output/JTH-Thesis-Template.pdf`.
+4. When the command finishes, the PDF is at `~/thesis/JTH-Thesis-Template.pdf`.
    Open it from the Jupyter Lab file browser to verify the build worked.
 
 What the one-liner does, in four steps:

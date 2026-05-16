@@ -3,7 +3,7 @@
 
 project:
   type: book                  # 'book' enables auto-numbered chapters and a single PDF
-  output-dir: _output         # rendered PDF and intermediate files go here
+  output-dir: .               # rendered PDF lands in the project root
 
 book:
   title: "JTH Thesis Template"                                    # printed on the title page (via before-body.tex)

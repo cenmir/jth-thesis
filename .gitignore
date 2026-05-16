@@ -1,10 +1,26 @@
-_output/
-.quarto/
-.claude/
+# Rendered output and intermediate artefacts.
+# The PDF lives in the project root (per output-dir: . in _quarto.yml)
+# but is regenerated on every render, so it never gets committed.
 *.pdf
+
+# Quarto cache and intermediate notebook artefacts.
+.quarto/
+**/*.quarto_ipynb
+
+# LaTeX intermediates that may be left behind if a render is
+# interrupted (otherwise Quarto cleans them up on success).
+*.aux
+*.log
+*.out
+*.toc
+*.lof
+*.lot
+*.fls
+*.fdb_latexmk
+
+# Editor / tool side-effects.
+.claude/
 .ipynb_checkpoints/
 __pycache__/
 
 /.quarto/
-
-**/*.quarto_ipynb
