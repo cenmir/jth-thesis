@@ -98,5 +98,7 @@ $if(date-signed)$$date-signed$$else$2026-05-XX$endif$
 \clearpage
 \listoftables
 
-\clearpage
-\pagenumbering{arabic}
+% Page numbering stays roman through the front-matter chapters
+% (Abstract, Preface, Abbreviations, Nomenclature). The switch to
+% arabic is triggered by a raw LaTeX block at the top of
+% introduction.ipynb, so Chapter 1 begins on page 1.

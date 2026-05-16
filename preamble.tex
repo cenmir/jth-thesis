@@ -1,8 +1,25 @@
 \usepackage{float}
 \usepackage[automark]{scrlayer-scrpage}
 \usepackage{amsmath}
+\usepackage{etoolbox}
 
 % Quarto's default LuaLaTeX engine loads unicode-math, which silently
 % breaks \bm{} from the bm package. Re-map \bm to unicode-math's \symbf
 % so existing \bm{d}, \bm{K}, etc. continue to work in equations.
 \AtBeginDocument{\providecommand{\bm}{\symbf}\let\bm\symbf}
+
+% Switch to arabic page numbering at the first numbered chapter.
+% Front matter (Abstract, Preface, Abbreviations, Nomenclature) uses
+% \chapter*, which routes through \@schapter and is left untouched.
+% Numbered chapters route through \@chapter; we patch that so the very
+% first call (chapter counter still 0) resets the page counter and the
+% numbering format.
+\makeatletter
+\pretocmd{\@chapter}{%
+  \ifnum\c@chapter=0\relax
+    \cleardoublepage
+    \pagenumbering{arabic}%
+    \setcounter{page}{1}%
+  \fi
+}{}{}
+\makeatother
