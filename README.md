@@ -5,8 +5,16 @@ the School of Engineering at Jönköping University. The chapters below act as
 a guide on how to write each part of the thesis; replace the guide text with
 your own content as you go.
 
-Designed to run out-of-the-box on the new **jupyter.ju.se** JupyterHub, which
-has Python, Jupyter, Quarto and a TeX distribution preinstalled.
+Designed to run out-of-the-box on the new **[jupyter.ju.se](https://jupyter.ju.se)**
+JupyterHub (work in progress), which has Python, Jupyter, Quarto and a TeX
+distribution preinstalled. Students are expected to write the thesis on
+that server.
+
+For background on the Quarto + Python + LaTeX workflow, see
+[python.ju.se](https://python.ju.se) and in particular the
+[writing documentation guide](https://python.ju.se/ProgrammingFundamentals/writing_documentation.html),
+which covers Quarto installation, math syntax, code execution and the
+Pandoc-to-LaTeX pipeline in more detail than this README.
 
 ## Project layout
 
@@ -81,10 +89,21 @@ the title page.
 
 ## Working on jupyter.ju.se
 
-1. Log in to https://jupyter.ju.se
-2. Open a terminal: `git clone <your fork of this repo>`
-3. Open any `.ipynb` chapter in the Jupyter Lab interface and edit it
-4. From the terminal, run `quarto render` to produce the PDF
+The recommended environment is the school's JupyterHub at
+[jupyter.ju.se](https://jupyter.ju.se) (currently a work in progress).
+It comes with Python, Jupyter, Quarto and TeX Live preinstalled, so
+there is nothing to install locally.
+
+1. Log in to <https://jupyter.ju.se>.
+2. Open a terminal in Jupyter Lab and clone your fork of this repo:
+   `git clone <your fork URL>`.
+3. Open any `.ipynb` chapter in Jupyter Lab and edit it.
+4. From the terminal, run `quarto render` to produce the PDF.
+
+If something in the Quarto pipeline does not behave as expected (math
+not rendering, citations missing, code cells not executing), the
+[writing documentation guide on python.ju.se](https://python.ju.se/ProgrammingFundamentals/writing_documentation.html)
+covers the fundamentals and the most common pitfalls.
 
 Code cells with `#| eval: false` in their first line render the listing
 without executing it, which is the safer default for a thesis. Switch to
