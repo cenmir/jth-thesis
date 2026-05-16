@@ -1,7 +1,8 @@
-# Rendered output and intermediate artefacts.
-# The PDF lives in the project root (per output-dir: . in _quarto.yml)
-# but is regenerated on every render, so it never gets committed.
+# Intermediate / user-added PDFs are ignored by default, but the
+# canonical rendered book is whitelisted so visitors to the repo can
+# preview the template without rendering it locally.
 *.pdf
+!JTH-Thesis-Template.pdf
 
 # Quarto cache and intermediate notebook artefacts.
 .quarto/
