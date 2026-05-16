@@ -90,15 +90,55 @@ the title page.
 ## Working on jupyter.ju.se
 
 The recommended environment is the school's JupyterHub at
-[jupyter.ju.se](https://jupyter.ju.se) (currently a work in progress).
-It comes with Python, Jupyter, Quarto and TeX Live preinstalled, so
-there is nothing to install locally.
+[jupyter.ju.se](https://jupyter.ju.se) (work in progress). It comes with
+Python, Jupyter, Quarto and TeX Live preinstalled, so there is nothing
+to install locally.
+
+### Quick start (one terminal command)
 
 1. Log in to <https://jupyter.ju.se>.
-2. Open a terminal in Jupyter Lab and clone your fork of this repo:
-   `git clone <your fork URL>`.
-3. Open any `.ipynb` chapter in Jupyter Lab and edit it.
-4. From the terminal, run `quarto render` to produce the PDF.
+2. Open a terminal in Jupyter Lab (File → New → Terminal).
+3. Paste this single line, press Enter:
+
+   ```bash
+   mkdir -p ~/thesis && curl -fsSL https://github.com/cenmir/JTH-Thesis-Template-Quarto/archive/refs/heads/main.tar.gz | tar xz -C ~/thesis --strip-components=1 && cd ~/thesis && quarto render
+   ```
+
+4. When the command finishes, the PDF is at `~/thesis/_output/JTH-Thesis-Template.pdf`.
+   Open it from the Jupyter Lab file browser to verify the build worked.
+
+What the one-liner does, in four steps:
+
+- `mkdir -p ~/thesis` creates the working folder.
+- `curl -fsSL .../main.tar.gz` downloads the latest tarball of this
+  template's `main` branch from GitHub.
+- `tar xz -C ~/thesis --strip-components=1` extracts the contents
+  directly into `~/thesis` (no wrapping `JTH-Thesis-Template-Quarto-main/`
+  folder).
+- `cd ~/thesis && quarto render` produces the first PDF so you know
+  the toolchain works before you start editing.
+
+After that, open any `.ipynb` chapter in Jupyter Lab and edit it. To
+rebuild the PDF: in the terminal, run `quarto render` again. To rebuild
+only the chapter you are editing: `quarto render theory.ipynb --to pdf`.
+
+### Working as a team (git version control)
+
+The one-liner above pulls a static snapshot, with no git history. If
+two students need to collaborate, fork the template on GitHub first and
+then clone your fork instead:
+
+```bash
+cd ~
+git clone https://github.com/<your-account>/JTH-Thesis-Template-Quarto.git thesis
+cd thesis
+quarto render
+```
+
+That way `git add`, `git commit`, and `git push` work as expected, and
+both authors can pull each other's changes.
+
+### Troubleshooting
 
 If something in the Quarto pipeline does not behave as expected (math
 not rendering, citations missing, code cells not executing), the
