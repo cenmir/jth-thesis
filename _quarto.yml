@@ -32,7 +32,8 @@ book:
 # Edit these once per project; you do not need to touch LaTeX for routine
 # title-page changes.
 thesis-type: "Master Thesis"                                       # printed below the school logo
-programme: "Industrial Product Realisation"                        # 'PAPER WITHIN ...' line on the title page
+programme: "Industrial Product Realisation"                        # subject area, named on the title page and the signing page
+subject-label: "THESIS WITHIN"                                     # the words before it: "THESIS WITHIN <programme>"
 university: "Jönköping University"                                 # institution name at the foot of the title page
 school: "School of Engineering"                                    # school name at the foot of the title page
 department: "Department of Product Development, Production and Design"  # department name at the foot of the title page

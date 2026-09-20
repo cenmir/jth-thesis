@@ -25,3 +25,6 @@
 __pycache__/
 
 /.quarto/
+
+# Per-notebook figure output from a render (matplotlib PDFs etc).
+*_files/

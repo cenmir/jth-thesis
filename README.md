@@ -79,6 +79,7 @@ book:
 
 thesis-type: "Master Thesis"
 programme: "Industrial Product Realisation"
+subject-label: "THESIS WITHIN"   # the label before it on the title page
 examiner: "Name of the examiner"
 supervisor: "Name of the supervisor"
 scope: "30 credits (second cycle)"
